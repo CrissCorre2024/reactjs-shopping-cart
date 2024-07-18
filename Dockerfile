@@ -12,6 +12,7 @@ RUN apt-get update && apt-get upgrade -y && \
     libde265-0=1.0.11-0+deb10u6 \
     libnghttp2-14=1.36.0-2+deb10u2 \
     libcurl4-openssl-dev=7.64.0-4+deb10u9 \
+    curl=7.64.0-4+deb10u9 \
     libncurses5-dev=6.1+20181013-2+deb10u5 \
     libwebp-dev=0.6.1-2+deb10u3 \
     libpq-dev=11.22-0+deb10u1 \
