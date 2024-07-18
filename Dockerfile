@@ -1,5 +1,5 @@
 # Utilizar una imagen base más reciente y mantenida de Node.js
-FROM node:20.15.1
+FROM node:20.15.1-bookworm-slim
 
 # Actualizar paquetes del sistema para mitigar vulnerabilidades
 RUN apt-get update && apt-get upgrade -y && \
