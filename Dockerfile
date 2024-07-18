@@ -1,27 +1,29 @@
-# Use a more recent Node.js LTS base image
+# Utilizar una imagen base más reciente y mantenida de Node.js
 FROM node:16
 
-# Create app directory
+# Crear directorio de la aplicación
 WORKDIR /usr/src/app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
+# Instalar dependencias de la aplicación
+# Se usa un comodín para asegurar que se copian tanto package.json como package-lock.json
 COPY package*.json ./
 
-RUN npm ci --only=production
+RUN npm install
+# Si se está construyendo el código para producción
+# RUN npm ci --only=production
 
-# Bundle app source
+# Copiar el código fuente de la aplicación
 COPY . .
 
-# Set maintainer
+# Establecer el mantenedor
 LABEL maintainer="malevarro.sec@gmail.com"
 
-# Set a health check
-HEALTHCHECK --interval=30s --timeout=10s --retries=3 CMD curl -f http://localhost:3000/ || exit 1
+# Establecer un chequeo de salud para el contenedor
+HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
+  CMD curl --fail http://localhost:3000/ || exit 1
 
-# Tell Docker what port to expose
+# Indicar a Docker el puerto que debe exponer
 EXPOSE 3000
 
-# Start the application
+# Comando para ejecutar la aplicación
 CMD ["npm", "start"]
