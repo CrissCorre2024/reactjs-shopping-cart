@@ -8,7 +8,7 @@ RUN apt-get update && apt-get upgrade -y && \
     python3.7-minimal=3.7.3-2+deb10u6 \
     git=1:2.20.1-2+deb10u9 \
     libdb5.3=5.3.28+dfsg1-0.5 \
-    zlib1g=1:1.2.11.dfsg-1+deb10u3 \
+    zlib1g=1:1.2.13.dfsg-1+deb12u1 \
     libde265-0=1.0.11-0+deb10u6 \
     libnghttp2-14=1.36.0-2+deb10u2 \
     libcurl4-openssl-dev=7.64.0-4+deb10u9 \
