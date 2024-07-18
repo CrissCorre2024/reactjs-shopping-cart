@@ -5,17 +5,17 @@
   "private": true,
   "devDependencies": {
     "gh-pages": "^3.2.3",
-    "react-scripts": "^5.0.1"  // Actualiza react-scripts si es necesario
+    "react-scripts": "^5.0.1"
   },
   "dependencies": {
-    "bootstrap": "^5.1.3",  // Actualiza a una versión más reciente
-    "prop-types": "^15.8.1", // Actualiza a una versión más reciente
-    "react": "^18.2.0",  // Actualiza a una versión más reciente
-    "react-dom": "^18.2.0",  // Actualiza a una versión más reciente
-    "react-redux": "^8.0.5",  // Actualiza a una versión más reciente
-    "redux": "^4.2.0",  // Actualiza a una versión más reciente
-    "node-fetch": "^2.6.7",  // Actualiza a la versión segura
-    "ua-parser-js": "^0.7.24"  // Actualiza a la versión segura
+    "bootstrap": "^5.1.3",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.0",
+    "node-fetch": "^2.6.7",
+    "ua-parser-js": "^0.7.24"
   },
   "scripts": {
     "start": "react-scripts start",
