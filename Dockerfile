@@ -1,5 +1,5 @@
-# use a node base image
-FROM node:15
+# Use a more recent Node.js LTS base image
+FROM node:16
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -9,20 +9,19 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
+RUN npm ci --only=production
 
 # Bundle app source
 COPY . .
 
-# set maintainer
-LABEL maintainer "malevarro.sec@gmail.com"
+# Set maintainer
+LABEL maintainer="malevarro.sec@gmail.com"
 
-# set a health check
+# Set a health check
+HEALTHCHECK --interval=30s --timeout=10s --retries=3 CMD curl -f http://localhost:3000/ || exit 1
 
-# tell docker what port to expose
+# Tell Docker what port to expose
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
-
+# Start the application
+CMD ["npm", "start"]
