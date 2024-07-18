@@ -1,5 +1,5 @@
 # Utilizar una imagen base más reciente y mantenida de Node.js
-FROM node:16
+FROM node:20.15.1
 
 # Actualizar paquetes del sistema para mitigar vulnerabilidades
 RUN apt-get update && apt-get upgrade -y && \
